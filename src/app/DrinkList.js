@@ -3,17 +3,40 @@ function Drink({ name }) {
       <section>
         <h1>{name}</h1>
         <dl>
-          <dt>Parte de la planta</dt>
-          <dd>{name === 'té' ? 'hoja' : 'grano'}</dd>
-          <dt>Contenido de cafeína</dt>
-          <dd>{name === 'té' ? '15–70 mg/taza' : '80–185 mg/taza'}</dd>
-          <dt>Antigüedad</dt>
-          <dd>{name === 'té' ? '4,000+ años' : '1,000+ años'}</dd>
+          <Contenido name={name}/>
         </dl>
       </section>
     );
   }
   
+  function Contenido({name}) {
+    let content
+    if(name ==='té') {
+      content =
+        <>
+          <dt>Parte de la planta</dt>
+          <dd>{'hoja'}</dd>
+          <dt>Contenido de cafeína</dt>
+          <dd>{'15–70 mg/taza'}</dd>
+          <dt>Antigüedad</dt>
+          <dd>{'4,000+ años'}</dd>
+        </>
+    }
+    else {
+      content = 
+      <>
+        <dt>Parte de la planta</dt>
+          <dd>{'grano'}</dd>
+          <dt>Contenido de cafeína</dt>
+          <dd>{'80–185 mg/taza'}</dd>
+          <dt>Antigüedad</dt>
+          <dd>{'1,000+ años'}</dd>
+        </>
+    }
+    return(
+      content
+    )
+  }
   export default function DrinkList() {
     return (
       <div>

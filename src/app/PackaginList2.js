@@ -2,6 +2,7 @@ function Item({ name, importance }) {
     return (
       <li className="item">
         {name}
+        {importance != 0 && <em>{" (Importancia: "+importance+")"}</em>}
       </li>
     );
   }
